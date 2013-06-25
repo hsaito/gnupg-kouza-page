@@ -1,0 +1,131 @@
+# -*- coding: utf-8-unix -*-
+#+TITLE:     PGP Zipの取り扱い方法
+#+AUTHOR:    斉藤英樹
+#+EMAIL:     hideki@hidekisaito.com
+#+DESCRIPTION: Emacs Builds prepared by Hideki Saito
+#+KEYWORDS: Emacs, software, OSS, compile, build, binaries
+
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="style.css" />
+#+HTML_HEAD: <script type="text/javascript">
+#+HTML_HEAD:
+#+HTML_HEAD:  var _gaq = _gaq || [];
+#+HTML_HEAD:  _gaq.push(['_setAccount', 'UA-114515-7']);
+#+HTML_HEAD:  _gaq.push(['_trackPageview']);
+#+HTML_HEAD:
+#+HTML_HEAD:  (function() {
+#+HTML_HEAD:    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+#+HTML_HEAD:    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+#+HTML_HEAD:    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+#+HTML_HEAD:  })();
+#+HTML_HEAD: </script>
+
+#+LANGUAGE:  ja
+#+OPTIONS:   H:3 num:nil toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+OPTIONS: ^:{}
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:h
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LINK_UP: index.html
+#+LINK_HOME: index.html
+#+XSLT:
+
+#+BEGIN_HTML
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-6327257212970697";
+/* GNU Privacy Guard講座Banner */
+google_ad_slot = "2155169100";
+google_ad_width = 970;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+#+END_HTML
+
+PGPにはPGP Zipと呼ばれるアーカイブの作成をすることができるようになっています。
+
+* ファイル構造
+
+PGP Zipはファイル構成的には複数のファイルをtarにより単一化したものを暗号化するという構成をとっています。PGP Zipそのものがサポートされていない環境においてもこの処理を手動で行うことにより、PGP Zipとして扱えるファイルを作成することができます。
+
+** コマンドラインの例
+
+*** gpg-zipスクリプトがGnuPGに同梱されている環境の場合
+
+gpg-zipスクリプトがGnuPGとともに配布されている環境（シェルスクリプトが使用できる環境）である場合はgpg-zipスクリプトを使用することにより互換性のあるファイルが作成できます。
+
+#+BEGIN_SRC sh
+gpg-zip -e [ファイル名１] [ファイル名２] …
+#+END_SRC
+
+*** gpg-zipスクリプトが使用できない場合
+
+gpg-zipが使用できない場合はtarコマンド（もしくは7-zipなど、tarファイルが作成できるソフト）を使用することにより可能です。（尚、基本的にはtar環境が標準で使用できる環境にいる場合は恐らくgpg-zipコマンドも使用できる可能性が高いです。）尚、Windows環境で動作するtarコマンドはGNU utilities for Win32で入手できます。
+
+** tarファイルの作成
+
+tarコマンドを使用してファイルを作成する場合は以下のようにします。
+
+#+BEGIN_SRC sh
+tar -c ファイル名 > file.tar
+#+END_SRC
+
+** 暗号化・署名
+
+作成したtarファイルを暗号化する際に、–set-filenameオプションを使用します。
+
+#+BEGIN_SRC sh
+gpg -o file.pgp -e file.tar –set-filename “foo.tar”
+#+END_SRC
+
+fooのところは任意の名称で構いません。この–set-filenameで.tarの名前がついたファイル名が指定されていない場合は正常動作しません。（後述）
+この方法で作成したファイルはPGPでもPGP Zipとして取り扱えるようになります。
+
+** 上記を組み合わせた方法
+
+パイプを使うことにより上記を組み合わせることもできます。
+
+#+BEGIN_SRC sh
+tar -c [ファイル名] | gpg -o file.pgp -e –set-filename “foo.tar”
+#+END_SRC
+
+** 復号化
+
+PGPや上記の方法で作成したPGP Zipファイルを復号化する際は反対に暗号化されているものをtarファイルに復号化した後、tarファイルを解凍する方法になります。
+
+#+BEGIN_SRC sh
+gpg -o file.tar -d file.pgp tar xvf file.tar
+#+END_SRC
+
+パイプを使用した場合は次のとおりです。
+
+#+BEGIN_SRC sh
+gpg -d file.pgp | tar xv
+#+END_SRC
+
+尚、処理系が異なると日本語のファイル名は文字化けします。（特にWindowsとMac/Linuxの間）ただし、検証自体は処理間の形式に対して行われますので署名の判定に関しては正しいものとなります。
+
+** Macの場合の注意
+
+Macの場合はtarコマンドではなくgnutarコマンドを使用してください。尚、環境変数としてCOPYFILE_DISABLE=trueが指定されていないとAppleDouble（file.txtに対応する._file.txtのようなファイルとして）として拡張属性が含まれてしまいますのでご注意ください。
+
+* Kleopatraのオプションは使用できるか（Gpg4Win Windows、KDE環境）
+
+Kleopatraを使用しファイルをKleopatraウインドウにドラッグ・ドロップした上で、Encrypt/Signを選択、Archive files with:のチェックボックスを有効にしTAR (PGP®-compatible)を選択することができるようになっています。バージョン2.1.0で検証してみると、これを使用した場合、ファイル名が正常に埋めこまれないため、PGP（10.2で検証）ではtarファイルをファイルとして扱う挙動を見せてしまいます。そのため、現状は受け取ったPGP Zipファイルを復号することは可能ですが、暗号化には使用しない方がいいでしょう。
+
+** 埋めこまれたファイル名の違い
+
+*** Kleopatraで作成した場合
+#+BEGIN_EXAMPLE
+:literal data packet:
+mode b (62), created 1315533132, name=”",
+raw data: unknown length
+#+END_EXAMPLE
+*** PGPで作成した場合
+#+BEGIN_EXAMPLE
+:literal data packet:
+mode b (62), created 0, name=”pgpTmpArchive2020.tar”,
+raw data: unknown length
+#+END_EXAMPLE

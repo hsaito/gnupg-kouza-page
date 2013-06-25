@@ -1,0 +1,69 @@
+# -*- coding: utf-8-unix -*-
+#+TITLE:     GNU Privacy Guard講座
+#+AUTHOR:    斉藤英樹
+#+EMAIL:     hideki@hidekisaito.com
+#+DESCRIPTION: Emacs Builds prepared by Hideki Saito
+#+KEYWORDS: Emacs, software, OSS, compile, build, binaries
+
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="style.css" />
+#+HTML_HEAD: <script type="text/javascript">
+#+HTML_HEAD:
+#+HTML_HEAD:  var _gaq = _gaq || [];
+#+HTML_HEAD:  _gaq.push(['_setAccount', 'UA-114515-7']);
+#+HTML_HEAD:  _gaq.push(['_trackPageview']);
+#+HTML_HEAD:
+#+HTML_HEAD:  (function() {
+#+HTML_HEAD:    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+#+HTML_HEAD:    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+#+HTML_HEAD:    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+#+HTML_HEAD:  })();
+#+HTML_HEAD: </script>
+
+#+LANGUAGE:  ja
+#+OPTIONS:   H:3 num:nil toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+OPTIONS: ^:{}
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:h
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LINK_UP: index.html
+#+LINK_HOME: index.html
+#+XSLT:
+
+#+BEGIN_HTML
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-6327257212970697";
+/* GNU Privacy Guard講座Banner */
+google_ad_slot = "2155169100";
+google_ad_width = 970;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+#+END_HTML
+
+* GNU Privacy Guardとは？
+GnuPGはGNUプロジェクトのRFC4880で定義されるOpenPGP標準の完全でフリーな実装です。GnuPGを使用することによりデータや通信 を暗号化したり署名したりすることができ、多機能の鍵管理システムや、多くの種類の公開鍵ディレクトリへのアクセスを可能にするモジュールが用意されています。
+
+GnuPGはGPGとも呼ばれ、他のアプリケーションとの統合を容易に可能にするコマンドラインツールです。多くのフロントエンドアプリケーション やライブラリが存在します。バージョン２ではS/MIMEの機能も採り入れています。 
+
+GnuPGはフリーソフトウェア（自由の意味でのフリー）です。GNU General Public Licenseに基づき、これはフリーに使用、変更、配布することができます。 
+
+GnuPGは二種類用意されており、ポータブルなスタンドアロンバージョンである1.4.x、そして、コンパイルの難易度が高いですが、より多くの機能を提供する2.0.xです。GnuPGはGNUプロジェクトのRFC4880で定義されるOpenPGP標準の完全でフリーな実装です。
+
+* 情報ぺーじ
+- [[file:howto.org][GnuPGの使い方]]
+- [[file:tips.org][GnuPG Tips]]
+
+* 特集
+** GnuPG関連
+- [[file:editkey.org][edit-keyオプションの使い方]]
+- [[file:shorthist.org][A Short History of the GNU Privacy Guard（日本語版）]]
+- [[file:gpg2compile.org][GnuPG 2のコンパイル手順]]
+- [[file:paperkey.org][Paperkeyを使った秘密鍵のバックアップ]]
+- [[file:pgpzip.org][PGP Zipの取り扱い方法]]
+** 暗号技術
+- [[file:company.org][会社環境での暗号運用の問題点]]
+- [[file:problem.org][暗号運用の問題点]]

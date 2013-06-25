@@ -1,0 +1,86 @@
+# -*- coding: utf-8-unix -*-
+#+TITLE:     会社環境での暗号運用の問題点
+#+AUTHOR:    斉藤英樹
+#+EMAIL:     hideki@hidekisaito.com
+#+DESCRIPTION: Emacs Builds prepared by Hideki Saito
+#+KEYWORDS: Emacs, software, OSS, compile, build, binaries
+
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="style.css" />
+#+HTML_HEAD: <script type="text/javascript">
+#+HTML_HEAD:
+#+HTML_HEAD:  var _gaq = _gaq || [];
+#+HTML_HEAD:  _gaq.push(['_setAccount', 'UA-114515-7']);
+#+HTML_HEAD:  _gaq.push(['_trackPageview']);
+#+HTML_HEAD:
+#+HTML_HEAD:  (function() {
+#+HTML_HEAD:    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+#+HTML_HEAD:    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+#+HTML_HEAD:    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+#+HTML_HEAD:  })();
+#+HTML_HEAD: </script>
+
+#+LANGUAGE:  ja
+#+OPTIONS:   H:3 num:nil toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+OPTIONS: ^:{}
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:h
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LINK_UP: index.html
+#+LINK_HOME: index.html
+#+XSLT:
+
+#+BEGIN_HTML
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-6327257212970697";
+/* GNU Privacy Guard講座Banner */
+google_ad_slot = "2155169100";
+google_ad_width = 970;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+#+END_HTML
+
+*【本項は情報が古くなってきています。近日中に更新される予定です。】*
+
+個人レベルで使用する場合とは違い会社環境で暗号を使用するのにいくつかの障害が見られる。本書ではそれらを簡潔にまとめてみるものとする。
+
+* 暗号普及を妨げる要因
+
+- 保守の労力とコスト
+- 一般的な問題
+- 背任行為の懸念
+- 引継問題
+- 保守の労力とコスト
+
+暗号を社内で利用する場合暗号そのものを購入する必要がある。これはフリーウェアバージョンには商用利用のライセンスが含まれない為である。そのためＰＧＰを使用する場合は商用利用が可能なバージョン又はGnuPGを使用するということとなる。
+
+ＰＧＰを購入する場合の価格だが２０００年１２月２８日現在の試算によると次のような経費が発生することとなる。
+
+- １０クライアントライセンス＝約$2,200
+- １０クライアントライセンス、電話サポートパッケージ＝約$2,500
+- １００クライアントライセンス＝約$10,800
+- １００クライアントライセンス、電話サポートパッケージ＝約$12,100
+- １０００クライアントライセンス＝約$69,000
+- １０００クライアントライセンス、電話サポートパッケージ＝約$77,300
+
+尚、上記は米国NAIによる価格であり日本語版の場合は上記より異なる場合がある。尚、上記の各パッケージは２年間のサブスクリプションである。（価格の変動などによる誤差が考えられる為、あくまでも参考として使用のこと）
+
+規模にもよるが社内において上記意外にインストールするための人員やサポートする為の人員が必要になるため更なる出費が懸念されることになる。
+
+尚、GnuPGを使用する場合、上記のライセンス料は発生しない。
+
+* 背任行為の懸念
+
+従業員が暗合を使用することによって発生する懸念は背任行為である。指定した人物にしか読めない文書を作成できる利点はそのまま諸刃の剣となりえ、背任行為を助長する可能性もある。
+
+会社環境ではインターネットが普及し始めた頃からその使用の監視などに努めており、このような問題を軽減しようとしている。暗号を使用する場合それらが無効化される可能性がある。
+
+この点については使用規則の徹底などや、従業員と雇用主の信頼関係を充実させる必要がある。たびたび議論されている話題ではあるがキーエスクロー（鍵委託）などの使用も一つの方法だと言える。
+
+* 引継問題
+個人で使用する場合とは違い、会社環境では人員の入れ替えが常に行われている。特に外部との取り引きなどで使用する場合（社内利用でも連絡がうまく伝達していない場合）など、人員異動や退職などが発生した場合にメッセージが復号化できなくなってしまう可能性が発生する。
+これを防止するためには賛否両論ではあるがＡＤＫの使用、または「会社鍵」に対しても暗号化するように徹底する必要がある。
