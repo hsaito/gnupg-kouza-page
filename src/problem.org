@@ -30,19 +30,7 @@
 #+HTML_LINK_HOME: index.html
 #+XSLT:
 
-#+BEGIN_HTML
-<script type="text/javascript"><!--
-google_ad_client = "ca-pub-6327257212970697";
-/* GNU Privacy Guard講座Banner */
-google_ad_slot = "2155169100";
-google_ad_width = 970;
-google_ad_height = 90;
-//-->
-</script>
-<script type="text/javascript"
-src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-</script>
-#+END_HTML
+
 
 暗号運用の問題点は主にその普及率の悪さであると言える。暗号化技術の運用は双方向性が非常に強いものであり通信する相手同士が暗号の運用をしている必要がある。暗号普及のネックになっているものが次のような問題である。
 
@@ -72,3 +60,17 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 二番目の法的な問題はこれは政府により禁止されているような問題が多いため政府に訴えかけて規制をなくす方向に交渉するしかないと言える。
 
 暗号の運用性に関する問題はソフト自体を容易にするのに加えメーラーなどから容易に使用できるような工夫などが必要であるといえる。基本的にユーザーは複雑な操作を嫌う傾向がある。
+
+#+BEGIN_HTML
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-6327257212970697";
+/* GNU Privacy Guard講座Banner */
+google_ad_slot = "2155169100";
+google_ad_width = 970;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+#+END_HTML

@@ -28,19 +28,7 @@
 #+EXPORT_EXCLUDE_TAGS: noexport
 #+XSLT:
 
-#+BEGIN_HTML
-<script type="text/javascript"><!--
-google_ad_client = "ca-pub-6327257212970697";
-/* GNU Privacy Guard講座Banner */
-google_ad_slot = "2155169100";
-google_ad_width = 970;
-google_ad_height = 90;
-//-->
-</script>
-<script type="text/javascript"
-src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-</script>
-#+END_HTML
+
 
 * GNU Privacy Guardとは？
 GnuPGはGNUプロジェクトのRFC4880で定義されるOpenPGP標準の完全でフリーな実装です。GnuPGを使用することによりデータや通信 を暗号化したり署名したりすることができ、多機能の鍵管理システムや、多くの種類の公開鍵ディレクトリへのアクセスを可能にするモジュールが用意されています。
@@ -65,3 +53,17 @@ GnuPGは二種類用意されており、ポータブルなスタンドアロン
 ** 暗号技術
 - [[file:company.org][会社環境での暗号運用の問題点]]
 - [[file:problem.org][暗号運用の問題点]]
+
+#+BEGIN_HTML
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-6327257212970697";
+/* GNU Privacy Guard講座Banner */
+google_ad_slot = "2155169100";
+google_ad_width = 970;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+#+END_HTML

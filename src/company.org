@@ -30,19 +30,6 @@
 #+HTML_LINK_HOME: index.html
 #+XSLT:
 
-#+BEGIN_HTML
-<script type="text/javascript"><!--
-google_ad_client = "ca-pub-6327257212970697";
-/* GNU Privacy Guard講座Banner */
-google_ad_slot = "2155169100";
-google_ad_width = 970;
-google_ad_height = 90;
-//-->
-</script>
-<script type="text/javascript"
-src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-</script>
-#+END_HTML
 
 *【本項は情報が古くなってきています。近日中に更新される予定です。】*
 
@@ -84,3 +71,18 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 * 引継問題
 個人で使用する場合とは違い、会社環境では人員の入れ替えが常に行われている。特に外部との取り引きなどで使用する場合（社内利用でも連絡がうまく伝達していない場合）など、人員異動や退職などが発生した場合にメッセージが復号化できなくなってしまう可能性が発生する。
 これを防止するためには賛否両論ではあるがＡＤＫの使用、または「会社鍵」に対しても暗号化するように徹底する必要がある。
+
+
+#+BEGIN_HTML
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-6327257212970697";
+/* GNU Privacy Guard講座Banner */
+google_ad_slot = "2155169100";
+google_ad_width = 970;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+#+END_HTML

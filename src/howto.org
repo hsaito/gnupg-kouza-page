@@ -30,19 +30,7 @@
 #+HTML_LINK_HOME: index.html
 #+XSLT:
 
-#+BEGIN_HTML
-<script type="text/javascript"><!--
-google_ad_client = "ca-pub-6327257212970697";
-/* GNU Privacy Guard講座Banner */
-google_ad_slot = "2155169100";
-google_ad_width = 970;
-google_ad_height = 90;
-//-->
-</script>
-<script type="text/javascript"
-src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-</script>
-#+END_HTML
+
 
 * GNU Privacy Guardのダウンロード
   :PROPERTIES:
@@ -218,3 +206,17 @@ gpg -ea
 #+BEGIN_SRC sh
 gpg -d filename.asc
 #+END_SRC
+
+#+BEGIN_HTML
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-6327257212970697";
+/* GNU Privacy Guard講座Banner */
+google_ad_slot = "2155169100";
+google_ad_width = 970;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+#+END_HTML

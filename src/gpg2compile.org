@@ -30,19 +30,7 @@
 #+HTML_LINK_HOME: index.html
 #+XSLT:
 
-#+BEGIN_HTML
-<script type="text/javascript"><!--
-google_ad_client = "ca-pub-6327257212970697";
-/* GNU Privacy Guard講座Banner */
-google_ad_slot = "2155169100";
-google_ad_width = 970;
-google_ad_height = 90;
-//-->
-</script>
-<script type="text/javascript"
-src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-</script>
-#+END_HTML
+
 
 GnuPG 2のコンパイルはGnuPG 1.x系列に比べると依存が多く、より複雑なプロセスを要します。
 ここではコンパイル方法をまとめました。
@@ -78,3 +66,17 @@ GPGME、Entropy Gathering Daemonは通常は必要ありませんが環境、使
 厳密にはいくつかのものは順番が入れ替わっても問題ありませんが、大方、上記のような順番で行う必要があります。
 コンパイル自体は一般的なconfigure ; make ; make installとなりますが、特に依存関係のエラーを見落とさないようにしてください。
 尚、特にホスティングサイトなどで特別なプレフィックスを使用している場合はbinディレクトリにパスが通っており、LD_LIBRARY_PATHがlibディレクトリに通っていることを確認してください。configureにprefixが通っていてもgnupg2のコンパイル時に失敗します。
+
+#+BEGIN_HTML
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-6327257212970697";
+/* GNU Privacy Guard講座Banner */
+google_ad_slot = "2155169100";
+google_ad_width = 970;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+#+END_HTML

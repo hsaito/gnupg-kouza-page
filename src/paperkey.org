@@ -30,19 +30,7 @@
 #+HTML_LINK_HOME: index.html
 #+XSLT:
 
-#+BEGIN_HTML
-<script type="text/javascript"><!--
-google_ad_client = "ca-pub-6327257212970697";
-/* GNU Privacy Guard講座Banner */
-google_ad_slot = "2155169100";
-google_ad_width = 970;
-google_ad_height = 90;
-//-->
-</script>
-<script type="text/javascript"
-src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-</script>
-#+END_HTML
+
 
 * Paperkeyとは
 
@@ -62,3 +50,18 @@ gpg –export-secret-key | paperkey
 入力の際は、paperkeyにそのコードを渡してやることによりもとの秘密鍵に変換されます。
 
 尚、このツールによって出力される秘密鍵のバックアップは依然として秘密鍵のセキュリティ（パスフレーズなど）で保護されているため、この方法によりバックアップより秘密鍵へのアクセスがパスフレーズなしに行えるようになるといったことはありません。しかし、万が一バックアップが漏洩した場合には念のため、鍵を作りなおすことは要検討であるといえます。
+
+
+#+BEGIN_HTML
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-6327257212970697";
+/* GNU Privacy Guard講座Banner */
+google_ad_slot = "2155169100";
+google_ad_width = 970;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+#+END_HTML

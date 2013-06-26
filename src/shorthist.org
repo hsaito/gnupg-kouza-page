@@ -30,19 +30,7 @@
 #+HTML_LINK_HOME: index.html
 #+XSLT:
 
-#+BEGIN_HTML
-<script type="text/javascript"><!--
-google_ad_client = "ca-pub-6327257212970697";
-/* GNU Privacy Guard講座Banner */
-google_ad_slot = "2155169100";
-google_ad_width = 970;
-google_ad_height = 90;
-//-->
-</script>
-<script type="text/javascript"
-src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-</script>
-#+END_HTML
+
 
 最初のバージョンのGNU Privacy Guard [0]がリリースされてから10年たちました。この最初のバージョンはGnuPGとは呼ばれず、g10と呼ばれ、これはドイツの憲法の通信の自由を定義する第十項（Grundgesetz Artikel 10）及び、シークレットサービスがこの憲法をすり抜けることができる、G-10法に対する語呂合わせとして命名しました。
 
@@ -102,3 +90,18 @@ http://www.fsfeurope.org/projects/swpat/background.en.html .
 文中敬称略、和訳：斉藤英樹
 
 [[http://lists.gnupg.org/pipermail/gnupg-users/2007-December/032250.html][原文]]
+
+
+#+BEGIN_HTML
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-6327257212970697";
+/* GNU Privacy Guard講座Banner */
+google_ad_slot = "2155169100";
+google_ad_width = 970;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+#+END_HTML
