@@ -86,3 +86,15 @@ code {
   padding-bottom: 20px;
   font-size: small;
 }
+
+#org-div-home-and-up {
+  font-size: large;
+}
+
+#org-div-home-and-up a:link {
+  color: #ffffff;
+}
+
+#org-div-home-and-up a:visited {
+  color: #ffffff;
+}

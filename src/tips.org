@@ -26,8 +26,8 @@
 #+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:h
 #+EXPORT_SELECT_TAGS: export
 #+EXPORT_EXCLUDE_TAGS: noexport
-#+LINK_UP: index.html
-#+LINK_HOME: index.html
+#+HTML_LINK_UP: index.html
+#+HTML_LINK_HOME: index.html
 #+XSLT:
 
 #+BEGIN_HTML
