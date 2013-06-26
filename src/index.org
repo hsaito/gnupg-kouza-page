@@ -54,6 +54,9 @@ GnuPGは二種類用意されており、ポータブルなスタンドアロン
 - [[file:company.org][会社環境での暗号運用の問題点]]
 - [[file:problem.org][暗号運用の問題点]]
 
+* その他
+- このページの編集履歴は[[https://github.com/hsaito/gnupg-kouza-page][GitHub]]で閲覧可能です。
+
 #+BEGIN_HTML
 <script type="text/javascript"><!--
 google_ad_client = "ca-pub-6327257212970697";
