@@ -45,6 +45,7 @@ GnuPGは二種類用意されており、ポータブルなスタンドアロン
 
 * 特集
 ** GnuPG関連
+- [[file:anonymous-recipients.org][受信者秘匿機能の利用]]
 - [[file:editkey.org][edit-keyオプションの使い方]]
 - [[file:shorthist.org][A Short History of the GNU Privacy Guard（日本語版）]]
 - [[file:gpg2compile.org][GnuPG 2のコンパイル手順]]
