@@ -80,3 +80,6 @@ google_ad_height = 90;
 src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </script>
 #+END_HTML
+* 注意点など
+** dirmngrでリンキングに失敗する場合
+ber_freeのシンボルで問題が出る場合、configureの際にLIBS=-llberを通すことで解決します。
