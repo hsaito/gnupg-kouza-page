@@ -116,3 +116,17 @@ Enigmailなどではサポートされません。
 このように秘匿暗号化を使用することにより、通信内容面以外に、そのメタデータも秘匿することが可能になります。通信傍受の仕組みなどの情報が明らかになるにつれ、メタデータの秘匿はこれから大きなテーマになってくるかと思います。
 
 現在は制限事項などのため、日常でメールなどに使用することは難しいかもしれませんが、工夫して利用することにより、強力な通信手法になるかと思います。
+
+#+BEGIN_HTML
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-6327257212970697";
+/* GNU Privacy Guard講座Banner */
+google_ad_slot = "2155169100";
+google_ad_width = 970;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+#+END_HTML
