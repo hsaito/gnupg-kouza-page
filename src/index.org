@@ -39,6 +39,13 @@ GnuPGはフリーソフトウェア（自由の意味でのフリー）です。
 
 GnuPGは二種類用意されており、ポータブルなスタンドアロンバージョンである1.4.x、そして、コンパイルの難易度が高いですが、より多くの機能を提供する2.0.xです。GnuPGはGNUプロジェクトのRFC4880で定義されるOpenPGP標準の完全でフリーな実装です。
 
+** ダウンロード
+GnuPGのダウンロードは[[http://gnupg.org/][gnupg.org]]から可能です。
+
+- [[http://gnupg.org/download/index.en.html][ソースコード]]
+- Windows向けは[[http://gpg4win.org/][Gpg4win]]を使用してください。
+- Mac向けは[[https://gpgtools.org/][GPGTools]]を使用してください。
+
 * 情報ページ
 - [[file:howto.org][GnuPGの使い方]]
 - [[file:tips.org][GnuPG Tips]]
