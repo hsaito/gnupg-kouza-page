@@ -52,6 +52,7 @@ GnuPGのダウンロードは[[http://gnupg.org/][gnupg.org]]から可能です�
 
 * 特集
 ** GnuPG関連
+- [[file:parameter.org][GnuPGパラメータシート]]
 - [[file:sample.org][GnuPGでサポートされている暗号図鑑]]
 - [[file:anonymous-recipients.org][受信者秘匿機能の利用]]
 - [[file:editkey.org][edit-keyオプションの使い方]]
