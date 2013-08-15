@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Code+Pro);
+
 html { sans-serif; font-size: 12pt; }
 
 body {
@@ -77,8 +79,8 @@ a:active{
   box-shadow: 0 0 5px 5px #006000;
 }
 
-code {
-  font-family: sans-serif;
+.example {
+  font-family: 'Source Code Pro', sans-serif;
 }
 
 #postamble {
