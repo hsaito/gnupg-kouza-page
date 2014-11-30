@@ -33,10 +33,16 @@
 
 
 * Paperkeyとは
+  :PROPERTIES:
+  :ID:       c5a79517-69d4-427a-9af8-b2f7a12ee5c7
+  :END:
 
 PaperkeyはGnuPGの開発者の一人であるDavid Shaw氏により作成されたOpenPGP秘密鍵バックアップのツールです。これを使うことにより秘密鍵を印刷も可能な比較的短いコードに変換することが可能です。
 
 * 使い方
+  :PROPERTIES:
+  :ID:       f159a344-1866-4102-a9ec-323f71b7eda7
+  :END:
 
 PGPがお使いのシステムに含まれていない場合はPaperkeyのサイトよりダウンロード可能です。（Gpg4winには含まれています。c:\program files\gnu\gpg4win\を確認してください。）
 

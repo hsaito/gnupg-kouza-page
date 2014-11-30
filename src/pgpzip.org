@@ -35,12 +35,21 @@
 PGPにはPGP Zipと呼ばれるアーカイブの作成をすることができるようになっています。
 
 * ファイル構造
+  :PROPERTIES:
+  :ID:       3a161657-fcf8-4e1d-9ff1-6d17dbb8f200
+  :END:
 
 PGP Zipはファイル構成的には複数のファイルをtarにより単一化したものを暗号化するという構成をとっています。PGP Zipそのものがサポートされていない環境においてもこの処理を手動で行うことにより、PGP Zipとして扱えるファイルを作成することができます。
 
 ** コマンドラインの例
+   :PROPERTIES:
+   :ID:       9bf1149f-b0af-4316-81fc-747eb1bf2ef9
+   :END:
 
 *** gpg-zipスクリプトがGnuPGに同梱されている環境の場合
+    :PROPERTIES:
+    :ID:       ad5d003a-dcbc-4024-964f-ff503ca410c8
+    :END:
 
 gpg-zipスクリプトがGnuPGとともに配布されている環境（シェルスクリプトが使用できる環境）である場合はgpg-zipスクリプトを使用することにより互換性のあるファイルが作成できます。
 
@@ -49,10 +58,16 @@ gpg-zip -e [ファイル名１] [ファイル名２] …
 #+END_SRC
 
 *** gpg-zipスクリプトが使用できない場合
+    :PROPERTIES:
+    :ID:       51701ad1-7d7b-43e0-96f8-81ef7aebd813
+    :END:
 
 gpg-zipが使用できない場合はtarコマンド（もしくは7-zipなど、tarファイルが作成できるソフト）を使用することにより可能です。（尚、基本的にはtar環境が標準で使用できる環境にいる場合は恐らくgpg-zipコマンドも使用できる可能性が高いです。）尚、Windows環境で動作するtarコマンドはGNU utilities for Win32で入手できます。
 
 ** tarファイルの作成
+   :PROPERTIES:
+   :ID:       f4a894dc-ddb6-40d3-adb2-ff0cfb0a2ef7
+   :END:
 
 tarコマンドを使用してファイルを作成する場合は以下のようにします。
 
@@ -61,6 +76,9 @@ tar -c ファイル名 > file.tar
 #+END_SRC
 
 ** 暗号化・署名
+   :PROPERTIES:
+   :ID:       00a0b1de-5f95-46b6-96c0-8b068de20c00
+   :END:
 
 作成したtarファイルを暗号化する際に、–set-filenameオプションを使用します。
 
@@ -72,6 +90,9 @@ fooのところは任意の名称で構いません。この–set-filenameで.t
 この方法で作成したファイルはPGPでもPGP Zipとして取り扱えるようになります。
 
 ** 上記を組み合わせた方法
+   :PROPERTIES:
+   :ID:       1bbbf334-5f86-46b9-bcc5-bda1f6341425
+   :END:
 
 パイプを使うことにより上記を組み合わせることもできます。
 
@@ -80,6 +101,9 @@ tar -c [ファイル名] | gpg -o file.pgp -e –set-filename “foo.tar”
 #+END_SRC
 
 ** 復号化
+   :PROPERTIES:
+   :ID:       70a70c48-d172-40b4-9b2a-5cf4054799ab
+   :END:
 
 PGPや上記の方法で作成したPGP Zipファイルを復号化する際は反対に暗号化されているものをtarファイルに復号化した後、tarファイルを解凍する方法になります。
 
@@ -96,22 +120,37 @@ gpg -d file.pgp | tar xv
 尚、処理系が異なると日本語のファイル名は文字化けします。（特にWindowsとMac/Linuxの間）ただし、検証自体は処理間の形式に対して行われますので署名の判定に関しては正しいものとなります。
 
 ** Macの場合の注意
+   :PROPERTIES:
+   :ID:       e0586ef0-02ab-4d59-921c-6b07115e11ff
+   :END:
 
 Macの場合はtarコマンドではなくgnutarコマンドを使用してください。尚、環境変数としてCOPYFILE_DISABLE=trueが指定されていないとAppleDouble（file.txtに対応する._file.txtのようなファイルとして）として拡張属性が含まれてしまいますのでご注意ください。
 
 * Kleopatraのオプションは使用できるか（Gpg4Win Windows、KDE環境）
+  :PROPERTIES:
+  :ID:       a66e4bdf-2768-4cbb-ba72-33b917de03d6
+  :END:
 
 Kleopatraを使用しファイルをKleopatraウインドウにドラッグ・ドロップした上で、Encrypt/Signを選択、Archive files with:のチェックボックスを有効にしTAR (PGP®-compatible)を選択することができるようになっています。バージョン2.1.0で検証してみると、これを使用した場合、ファイル名が正常に埋めこまれないため、PGP（10.2で検証）ではtarファイルをファイルとして扱う挙動を見せてしまいます。そのため、現状は受け取ったPGP Zipファイルを復号することは可能ですが、暗号化には使用しない方がいいでしょう。
 
 ** 埋めこまれたファイル名の違い
+   :PROPERTIES:
+   :ID:       93119e0b-950c-40a2-839a-7f7fa756a987
+   :END:
 
 *** Kleopatraで作成した場合
+    :PROPERTIES:
+    :ID:       b7aa3729-1380-47f0-bb20-a287eb4e585e
+    :END:
 #+BEGIN_EXAMPLE
 :literal data packet:
 mode b (62), created 1315533132, name=”",
 raw data: unknown length
 #+END_EXAMPLE
 *** PGPで作成した場合
+    :PROPERTIES:
+    :ID:       51b89f2f-74bb-40d7-9600-733ba3c4bf59
+    :END:
 #+BEGIN_EXAMPLE
 :literal data packet:
 mode b (62), created 0, name=”pgpTmpArchive2020.tar”,

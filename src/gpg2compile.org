@@ -39,6 +39,9 @@ GnuPG 2のコンパイルはGnuPG 1.x系列に比べると依存が多く、よ�
 尚、ホスティングサーバに置かれている秘密鍵など、ローカル管理に比べて比較的安全性が劣りますので留意しておいてください。
 
 * 必要なソースコード
+  :PROPERTIES:
+  :ID:       8611de63-d810-40fe-a242-0d46b419046a
+  :END:
 - GnuPG 2
 - libgcrypt
 - libksba
@@ -51,7 +54,12 @@ GnuPG 2のコンパイルはGnuPG 1.x系列に比べると依存が多く、よ�
 PinentryもGnuPGのFTPサーバにあるのですが、上記のダウンロードページからリンクされていません。当該ディレクトリから最新版をダウンロードしてください。
 GPGME、Entropy Gathering Daemonは通常は必要ありませんが環境、使用法によっては導入する必要があるかもしれません。（Entropy Gathering Daemonは/dev/randomが存在しない環境で必要です。）
 
+GnuPG Modern (2.1.x系)の場合、DirMngrは組み込み済みであるため、別途入手、コンパイルする必要はありません。
+
 * コンパイルの順番
+  :PROPERTIES:
+  :ID:       2b2cf9cf-11e4-4ad6-b3ef-8ba1f2347b65
+  :END:
 
 コンパイルは依存の関係上、次の順番で行う必要があります。
 
@@ -81,5 +89,11 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </script>
 #+END_HTML
 * 注意点など
+  :PROPERTIES:
+  :ID:       419ffeea-c1e3-4e34-b44b-164c8257a959
+  :END:
 ** dirmngrでリンキングに失敗する場合
+   :PROPERTIES:
+   :ID:       3909adac-4011-4f80-9bc0-72b238daebab
+   :END:
 ber_freeのシンボルで問題が出る場合、configureの際にLIBS=-llberを通すことで解決します。
