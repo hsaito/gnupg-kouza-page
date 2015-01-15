@@ -42,19 +42,6 @@ GnuPGはフリーソフトウェア（自由の意味でのフリー）です。
 
 GnuPGは二種類用意されており、ポータブルなスタンドアロンバージョンである1.4.x、そして、コンパイルの難易度が高いですが、より多くの機能を提供する2.0.xです。GnuPGはGNUプロジェクトのRFC4880で定義されるOpenPGP標準の完全でフリーな実装です。
 
-* ニュース
-- [[file:16th-announce.org][16 Years of protecting privacy（日本語版）]]を公開しました。
-- GnuPG現行最新版は2.0.22/1.4.16です。
-
-** ダウンロード
-   :PROPERTIES:
-   :ID:       3e1af366-4eea-48fe-afe5-973a5e88813b
-   :END:
-GnuPGのダウンロードは[[http://gnupg.org/][gnupg.org]]から可能です。
-
-- [[http://gnupg.org/download/index.en.html][ソースコード]]
-- Windows向けは[[http://gpg4win.org/][Gpg4win]]を使用してください。（尚、公式に配布されるバイナリに関してはGpg4winに一本化されているためバージョンは2.0系列となります。）
-- Mac向けは[[https://gpgtools.org/][GPGTools]]を使用してください。
 
 * 最新情報
   :PROPERTIES:
@@ -74,12 +61,30 @@ GnuPGのダウンロードは[[http://gnupg.org/][gnupg.org]]から可能です�
 |---------------+----------------+----------------------------------------------------------------------|
 
 
+* ダウンロード
+   :PROPERTIES:
+   :ID:       3e1af366-4eea-48fe-afe5-973a5e88813b
+   :END:
+GnuPGのダウンロードは[[http://gnupg.org/][gnupg.org]]から可能です。
+
+- [[http://gnupg.org/download/index.en.html][ソースコード]]
+- Windows向けは[[http://gpg4win.org/][Gpg4win]]を使用してください。（尚、公式に配布されるバイナリに関してはGpg4winに一本化されているためバージョンは2.0系列となります。）
+- Mac向けは[[https://gpgtools.org/][GPGTools]]を使用してください。
+
 * 情報ページ
   :PROPERTIES:
   :ID:       48320f6e-ed2f-4a6f-9259-c7388db5de13
   :END:
 - [[file:howto.org][GnuPGの使い方]]
 - [[file:tips.org][GnuPG Tips]]
+
+* 公式発表等（翻訳版）
+  :PROPERTIES:
+  :ID:       cb013252-1cf8-4949-bb00-cbe2d01e6fdc
+  :END:
+- [[file:16th-announce.org][16 Years of protecting privacy（日本語版）]]
+- [[file:shorthist.org][A Short History of the GNU Privacy Guard（日本語版）]]
+
 
 * 特集
   :PROPERTIES:
@@ -94,7 +99,6 @@ GnuPGのダウンロードは[[http://gnupg.org/][gnupg.org]]から可能です�
 - [[file:sample.org][GnuPGでサポートされている暗号図鑑]]
 - [[file:anonymous-recipients.org][受信者秘匿機能の利用]]
 - [[file:editkey.org][edit-keyオプションの使い方]]
-- [[file:shorthist.org][A Short History of the GNU Privacy Guard（日本語版）]]
 - [[file:gpg2compile.org][GnuPG 2のコンパイル手順]]
 - [[file:paperkey.org][Paperkeyを使った秘密鍵のバックアップ]]
 - [[file:pgpzip.org][PGP Zipの取り扱い方法]]
