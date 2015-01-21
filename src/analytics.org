@@ -1,0 +1,13 @@
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="style.css" />
+#+HTML_HEAD: <script type="text/javascript">
+#+HTML_HEAD:
+#+HTML_HEAD:  var _gaq = _gaq || [];
+#+HTML_HEAD:  _gaq.push(['_setAccount', 'UA-114515-7']);
+#+HTML_HEAD:  _gaq.push(['_trackPageview']);
+#+HTML_HEAD:
+#+HTML_HEAD:  (function() {
+#+HTML_HEAD:    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+#+HTML_HEAD:    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+#+HTML_HEAD:    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+#+HTML_HEAD:  })();
+#+HTML_HEAD: </script>

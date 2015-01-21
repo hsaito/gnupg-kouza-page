@@ -5,19 +5,7 @@
 #+DESCRIPTION: Emacs Builds prepared by Hideki Saito
 #+KEYWORDS: Emacs, software, OSS, compile, build, binaries
 
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="style.css" />
-#+HTML_HEAD: <script type="text/javascript">
-#+HTML_HEAD:
-#+HTML_HEAD:  var _gaq = _gaq || [];
-#+HTML_HEAD:  _gaq.push(['_setAccount', 'UA-114515-7']);
-#+HTML_HEAD:  _gaq.push(['_trackPageview']);
-#+HTML_HEAD:
-#+HTML_HEAD:  (function() {
-#+HTML_HEAD:    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-#+HTML_HEAD:    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-#+HTML_HEAD:    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-#+HTML_HEAD:  })();
-#+HTML_HEAD: </script>
+#+INCLUDE: analytics.org
 
 #+LANGUAGE:  ja
 #+OPTIONS:   H:3 num:nil toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
@@ -98,3 +86,5 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
    :ID:       3909adac-4011-4f80-9bc0-72b238daebab
    :END:
 ber_freeのシンボルで問題が出る場合、configureの際にLIBS=-llberを通すことで解決します。
+
+#+INCLUDE: ad.org
