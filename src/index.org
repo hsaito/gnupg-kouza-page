@@ -5,6 +5,7 @@
 #+DESCRIPTION: Emacs Builds prepared by Hideki Saito
 #+KEYWORDS: Emacs, software, OSS, compile, build, binaries
 
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="style.css" />
 #+INCLUDE: analytics.org
 
 #+LANGUAGE:  ja
