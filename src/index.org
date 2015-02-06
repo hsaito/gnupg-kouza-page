@@ -17,12 +17,17 @@
 #+EXPORT_EXCLUDE_TAGS: noexport
 #+XSLT:
 
-
-
 * GNU Privacy Guardとは？
   :PROPERTIES:
   :ID:       9c842146-5e1f-4ec1-8f05-4196f4a139e5
   :END:
+#+BEGIN_HTML
+<blockquote style="border: 5px solid red; text-align: center">
+GnuPG開発者のWerner Koch氏はフルタイムでGnuPGの開発に携わっていますが、経済的には<a href="http://www.propublica.org/article/the-worlds-email-encryption-software-relies-on-one-guy-who-is-going-broke">良好ではない</a>と報道されております。<br>
+可能な方は<a href="https://www.gnupg.org/donate/index.html">寄付</a>をお願いいたします。
+</blockquote>
+#+END_HTML
+
 GnuPGはGNUプロジェクトのRFC4880で定義されるOpenPGP標準の完全でフリーな実装です。GnuPGを使用することによりデータや通信 を暗号化したり署名したりすることができ、多機能の鍵管理システムや、多くの種類の公開鍵ディレクトリへのアクセスを可能にするモジュールが用意されています。
 
 GnuPGはGPGとも呼ばれ、他のアプリケーションとの統合を容易に可能にするコマンドラインツールです。多くのフロントエンドアプリケーション やライブラリが存在します。バージョン２ではS/MIMEの機能も採り入れています。 
