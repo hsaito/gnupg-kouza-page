@@ -8,12 +8,11 @@ body {
 
 #content {
   background-color: #FFFFFF;
-  padding: 15px;
+  padding: 3%;
   margin: auto;
   margin-bottom: 30px;
   text-align: left; 
-  width: 1000px; 
-  min-width: 1000px; 
+  width: 80%
   -moz-box-shadow: 0 0 5px 5px #006000;
   -webkit-box-shadow: 0 0 5px 5px #006000;
   box-shadow: 0 0 5px 5px #006000;
@@ -99,4 +98,11 @@ a:active{
 
 #org-div-home-and-up a:visited {
   color: #ffffff;
+}
+
+@media (min-width: 700px), handheld
+{
+    #content {
+	width: 90%;
+    }
 }
