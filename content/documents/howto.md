@@ -1,118 +1,78 @@
-# -*- coding: utf-8-unix -*-
-#+TITLE:     GnuPGの使い方
-#+AUTHOR:    斉藤英樹
-#+EMAIL:     hideki@hidekisaito.com
-#+DESCRIPTION: Emacs Builds prepared by Hideki Saito
-#+KEYWORDS: Emacs, software, OSS, compile, build, binaries
++++
+title = "GnuPGの使い方"
+slug = "howto"
+categories = [
+  "使い方",
+]
++++
 
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="style.css" />
-#+INCLUDE: analytics.org
+## GNU Privacy Guardのダウンロード
 
-#+LANGUAGE:  ja
-#+OPTIONS:   H:3 num:nil toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
-#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
-#+OPTIONS: ^:{}
-#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:h
-#+EXPORT_SELECT_TAGS: export
-#+EXPORT_EXCLUDE_TAGS: noexport
-#+HTML_LINK_UP: index.html
-#+HTML_LINK_HOME: index.html
-#+XSLT:
-
-
-
-* GNU Privacy Guardのダウンロード
-  :PROPERTIES:
-  :ID:       d5b364da-88f5-4908-afd1-0fcb929c4a64
-  :END:
 
 まずGNU Privacy Guardをダウンロードする必要があります。ダウンロードはGNU Privacy Guard
 Homepageよりダウンロードしてください。コンパイルする必要があるものとバイナリでダウンロードできるものもあります。これはプラットフォームによって違ってくるのでご使用のオペレーティングシステムにあったものをダウンロードしてください。
 
-* キーの生成
-  :PROPERTIES:
-  :ID:       9fe261c8-6a71-44be-84e7-df0670a23903
-  :END:
+## キーの生成
+
 
 ダウンロードの終了後、まずは自分の秘密鍵と公開鍵を生成する必要があります。コマンドラインでgpgと入力してみて何か反応があればパスが通っている証拠ですのでプログラムが実行されている場合はCtrl-Cを押して終了して下さい。この時に反応がないようであればインストールしたフォルダにパスが通るようにしてください。次にgpg–gen-keyと入力します。
 
-* 鍵のタイプの指定
-  :PROPERTIES:
-  :ID:       9f2ab36a-6ff2-4f2f-9e76-638c54b37eaf
-  :END:
+## 鍵のタイプの指定
+
 
 鍵の生成を開始して、まず入力を求められるのが鍵の種類です。この画面では１を選択します。２は署名のみのキーで、３はＥｌＧａｍａｌ方式のみを使用するものですが基本的には１を選択してください。
 
-* 鍵長の設定
-  :PROPERTIES:
-  :ID:       f10be8f0-14e5-4d97-a10e-1145d5dcc562
-  :END:
+## 鍵長の設定
+
 
 次に鍵の長さを設定します。鍵は長い物ほど強固なセキュリティを実現します。しかしあまりにも長すぎると計算に時間がかかりすぎるものとなります。１０２４が標準となっていますが将来性などを考えると２０４８程度が適当です。
 
-* 有効期限の設定
-  :PROPERTIES:
-  :ID:       d73deef8-0297-4b3b-96c5-dcfbe082b614
-  :END:
+## 有効期限の設定
+
 
 鍵の有効期限はいつまでその鍵が有効かを指定します。通常の場合は永久的に有効な０を指定すると問題ないでしょう。特に期限が必要であればここで指定してください。
 個人情報の設定 ここでは名前、電子メール、名前に付随するメモを入力します。これにより鍵に名前のついたヘッダを追加することができます。
 
-* パスフレーズ
-  :PROPERTIES:
-  :ID:       c4244d8b-134b-452e-89a8-1cde2df71270
-  :END:
+## パスフレーズ
+
 
 次にパスフレーズを設定します。パスフレーズはパスワードと違いスペースなどを含むものも可能で長さも事実上無制限です。これは大事なパスワードですので覚えやすく紙に書かなくてもよく、かつ分かりにくいものにするようにしてください。
 
-* 乱数の生成（自動）
-  :PROPERTIES:
-  :ID:       f7d4655e-74a4-4182-baa8-bc1f0794e3c9
-  :END:
+## 乱数の生成（自動）
+
 
 ここで乱数の生成が開始されます。乱数生成中はしばらくかかります。この時に他の作業をしていても問題ありません（作業をすることによりキーボードの入力やマウスの動きなども乱数発生に使用されます）
 
-* 終了
-  :PROPERTIES:
-  :ID:       9369e781-01d8-4a1b-a1d0-d8bfae60517d
-  :END:
+## 終了
+
 
 お疲れさまでした、これで鍵の生成は終了です。
 
-* 破棄証明書の生成
-  :PROPERTIES:
-  :ID:       8abed0fd-ae64-4c18-bb33-70fd3edf83a6
-  :END:
+## 破棄証明書の生成
+
 
 鍵を生成した後、破棄証明書を作っておきます。これは鍵を無効化する時に使用します。これは次のように入力することで行えます。
 
-#+BEGIN_SRC sh
-gpg -o revcert.asc --gen-revoke userid
-#+END_SRC
+    gpg -o revcert.asc --gen-revoke userid
 
 太字のところに適当なものを入れてください。revcert.ascのところには任意のファイル名、useridのところには名前かその一部に変えてください。これにより指定したファイル名のファイルに破棄証明書が作成されるのでこれはなくさないようにどこかにしまって置いてください。この時、ＨＤには保存せず、フロッピーなどに保存して安全な場所にしまっておくといいです。この破棄証明書は不正に使用されると誰でも鍵を無効化してしまうことができるので取り扱いには注意してください。
-鍵を破棄する場合は 万が一、パスワードの漏洩などで鍵を破棄する必要がある場合は次のように鍵を破棄します。 
-#+BEGIN_SRC sh
-gpg --import revcert.asc 
-#+END_SRC
+鍵を破棄する場合は 万が一、パスワードの漏洩などで鍵を破棄する必要がある場合は次のように鍵を破棄します。
+
+    gpg --import revcert.asc
 
 これは重要ですので覚えておいてください。この後、この破棄した公開鍵を公開鍵サーバに送るとその鍵は破棄されます。
 
-* 鍵の登録
-  :PROPERTIES:
-  :ID:       aec94a61-d924-4164-9b55-ac1d14daf32d
-  :END:
+## 鍵の登録
+
 
 鍵を生成したらこれを公開鍵サーバに登録しておくことにより他の人が公開鍵を入手することが可能です。これによりあなた宛のメールなどに暗号化したメッセージを送信したりすることができるようになります。ここではKeyserver.netを使用して説明していきます。まず次のように入力します。
 
-#+BEGIN_SRC sh
-gpg -o pubkey.asc -a --export userid
-#+END_SRC
+    gpg -o pubkey.asc -a --export userid
 
-コンソールよりコピー・ペーストが可能な場合次のようにすることで公開鍵をコンソールに出力することができます。 
-#+BEGIN_SRC sh
-gpg -a --export userid
-#+END_SRC 
+コンソールよりコピー・ペーストが可能な場合次のようにすることで公開鍵をコンソールに出力することができます。
+
+    gpg -a --export userid
+
 上記のコマンドラインを使用した場合はテキストエディタなどで指定したファイルを開き、内容をコピーしてください。
 次に「Keyserver.net」のリンクを辿ってください。次に「ADD A KEY」をクリックし、表示された「Paste your key
 here:」のボックスに上記の公開鍵を貼り付けてください。「Submit this key to the
@@ -120,92 +80,61 @@ keyserver」を押すと登録が完了します。
 
 尚、設定などで公開鍵サーバが選択されている場合は以下のような方法も可能です。
 
-#+BEGIN_SRC sh
-gpg --send-key userid
-#+END_SRC
+    gpg --send-key userid
 
 公開鍵サーバを明示的に指定する場合は
 
-#+BEGIN_SRC sh
-gpg --keyserver hkp://pgp.mit.edu --send-key userid
-#+END_SRC
+    gpg --keyserver hkp://pgp.mit.edu --send-key userid
 
-* 他の人の公開鍵を入手する
-  :PROPERTIES:
-  :ID:       4d5762e3-6041-4ad9-82ee-8b424a559150
-  :END:
+## 他の人の公開鍵を入手する
+
 
 他の人に暗号化したメッセージを送るのには相手の公開鍵を入手する必要があります。これも公開鍵サーバですることができます。登録するときに使用したページの「公開鍵の検索」で名前を入力することにより検索できます。次にコマンドラインに次のように入力してください。
-=gpg --import pubkey.asc= コンソールに貼り付けることができる場合は =gpg --import=
+`gpg --import pubkey.asc` コンソールに貼り付けることができる場合は `gpg --import`
 とすることによりコンソールに貼り付けることができます。この時エンターキーを押した後に貼り付けてください。この鍵を入手後、鍵の指紋をチェックする必要があります。これが異なる場合、鍵が改変されたか鍵を正しく入手できていません。大抵のホームページなどでは下図のような表示があります。
-入手した鍵の指紋を表示するのには次のように入力します。 
-#+BEGIN_SRC sh
-gpg --fingerprint
-#+END_SRC
+入手した鍵の指紋を表示するのには次のように入力します。
+
+    gpg --fingerprint
+
 すると次のように表示されますのでこの指紋が一致することを確認します。このキーを使う前に鍵署名をする必要があります。鍵署名にはExportableなものとLocalなものがあります。Exportableはその鍵を他の人に渡すとその署名も同時に渡すことになります。Localなものは他の人に渡してもその署名は渡されません。普通はLocalな署名を使うとよいでしょう。これをするには次のようにします。
 
-#+BEGIN_SRC sh
-gpg --lsign-key userid（Local署名）
-#+END_SRC sh
-
-#+BEGIN_SRC sh
-gpg --sign-key userid（Exportable署名）
-#+END_SRC
+    gpg --lsign-key userid（Local署名）
 
 次に信用データーベースを更新する必要があります。信用データーベースというのは鍵に対する信用性を示すものです。まず次のように入力します。このデータベースは他と共有されることはなく、鍵の信用は使用者が思う信用であり、他人と共有される性質のものではありません。
 
 ここで指定される信用は間接的にその鍵が署名する他の鍵の信用度の計算に使用されます。例えば保有している鍵が自分の鍵により署名された鍵のみで構成されたものである場合など、特に信用を設定する必要はありません。
 
-#+BEGIN_SRC sh
-gpg --edit-key userid
-#+END_SRC
+    gpg --edit-key userid
 
 次にコマンドの入力を求められますのでそこでtrustと入力します。そうすると次のようなリストが表示されます。
 
-#+BEGIN_EXAMPLE
-1 = Don’t know 2 = I do NOT trust 3 = I trust
-marginally 4 = I trust fully s = please show me more information m =
-back to the main menu
-#+END_EXAMPLE
+    1 = Don’t know 2 = I do NOT trust 3 = I trust
+    marginally 4 = I trust fully s = please show me more information m =
+    back to the main menu
 
 この鍵を完全に信用しない場合は２、ある程度信用する場合は３、完全に信用（例えば実際に本人に会ったことがありその本人に確認がとれている場合など）する場合は４を選択します。
 
+## 暗号化＆署名
 
-* 暗号化＆署名
-  :PROPERTIES:
-  :ID:       c63bf3e7-93f6-474c-a60b-cc099de39943
-  :END:
 
 次に暗号化をしてみます。ファイルを暗号化する方法とインタラクティブにコンソールから入力する方法がありますがどちらも基本的には同じようにします。ファイルを暗号化する場合は次のようにします。
 
-#+BEGIN_SRC sh
-gpg -ea filename （暗号化したファイルを画面に出力する場合）
-#+END_SRC
+    gpg -ea filename （暗号化したファイルを画面に出力する場合）
 
-#+BEGIN_SRC sh
-gpg -o filename.asc -ea filename（暗号化したファイルをファイルに出力する場合）
-#+END_SRC
+    gpg -o filename.asc -ea filename（暗号化したファイルをファイルに出力する場合）
 
 どちらの場合も受取人を指定するように表示されるのでその時に名前、またはその一部を入力します。これをコマンドラインに含めることもできます。
 
-#+BEGIN_SRC sh
-gpg -r receipient -ea filename（暗号化したファイルを画面に出力する場合）
-#+END_SRC
-#+BEGIN_SRC sh
-gpg -o filename.asc -r receipient -ea filename（暗号化したファイルをファイルに出力する場合）
-#+END_SRC
+    gpg -r receipient -ea filename（暗号化したファイルを画面に出力する場合）
 
-コンソールから入力する場合は次のようにします。 
-#+BEGIN_SRC sh
-gpg -ea
-#+END_SRC
+    gpg -o filename.asc -r receipient -ea filename（暗号化したファイルをファイルに出力する場合）
+
+コンソールから入力する場合は次のようにします。
+
+    gpg -ea
 
 次にメッセージを入力しCtrl-DもしくはCtrl-Z（プラットフォームによって違います）そしてファイルの場合と同じように受取人の名前を入力します。この場合も上記のケースと同じように-oや-rオプションを使用できます。
 暗号化をする時に同時に署名もする場合は上記のそれぞれのオプションの-eaを-seaに変えることにより可能です。署名のみすることも可能です。その場合は-seaを-saとします。署名する時に–clearsignとすることによりGnuPGが無くても読める署名をすることができます。
 復号化は次のようにします。
 
-#+BEGIN_SRC sh
-gpg -d filename.asc
-#+END_SRC
-
-#+INCLUDE: ad.org
+    gpg -d filename.asc

@@ -1,32 +1,14 @@
-# -*- coding: utf-8-unix -*-
-#+TITLE:     暗号運用の問題点
-#+AUTHOR:    斉藤英樹
-#+EMAIL:     hideki@hidekisaito.com
-#+DESCRIPTION: Emacs Builds prepared by Hideki Saito
-#+KEYWORDS: Emacs, software, OSS, compile, build, binaries
-
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="style.css" />
-#+INCLUDE: analytics.org
-
-#+LANGUAGE:  ja
-#+OPTIONS:   H:3 num:nil toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
-#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
-#+OPTIONS: ^:{}
-#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:h
-#+EXPORT_SELECT_TAGS: export
-#+EXPORT_EXCLUDE_TAGS: noexport
-#+HTML_LINK_UP: index.html
-#+HTML_LINK_HOME: index.html
-#+XSLT:
-
-
++++
+title = "暗号運用の問題点"
+slug = "problem"
++++
 
 暗号運用の問題点は主にその普及率の悪さであると言える。暗号化技術の運用は双方向性が非常に強いものであり通信する相手同士が暗号の運用をしている必要がある。暗号普及のネックになっているものが次のような問題である。
 
-- 「自分には関係ない」などの意識
-- 政府等による規制
-- 暗号ソフトの運用性、容易性の問題
-- サポートされていないプラットフォーム
+* 「自分には関係ない」などの意識
+* 政府等による規制
+* 暗号ソフトの運用性、容易性の問題
+* サポートされていないプラットフォーム
 
 まず最初の「自分には関係ない」との認識は世界的に一般的に見られる傾向ではあるが最近では政府への不信感などで変化してきている傾向も見られる。ところが次のような認識によって暗号の使用が行われない場合も多い：
 
@@ -42,12 +24,10 @@
 
 次にそれぞれの対処法を見ていく。まず最初の「自分には関係ない」との意識はこれは意識を変えていく他ないといえよう。これを解決するにはいくつかの方法があるが主に次のようなものが考えられる。
 
-- 個人的なＰＧＰの使用の推奨、使い方の説明など
-- 安価に受講できるＰＧＰの講習の運営
-- マスコミによる暗号の普及活動
+* 個人的なＰＧＰの使用の推奨、使い方の説明など
+* 安価に受講できるＰＧＰの講習の運営
+* マスコミによる暗号の普及活動
 
 二番目の法的な問題はこれは政府により禁止されているような問題が多いため政府に訴えかけて規制をなくす方向に交渉するしかないと言える。
 
 暗号の運用性に関する問題はソフト自体を容易にするのに加えメーラーなどから容易に使用できるような工夫などが必要であるといえる。基本的にユーザーは複雑な操作を嫌う傾向がある。
-
-#+INCLUDE: ad.org

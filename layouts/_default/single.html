@@ -1,0 +1,22 @@
+  <html>
+  <head>
+    <title>{{ .Title }} :: GNU Privacy Guard講座</title>
+    <meta name="description" content="{{ .Description }}">
+    {{partial "commonheading.html" .}}
+  </head>
+
+<div id="content">
+  <div>
+<span style="color: rgb(180,180,180);">GNU Privacy Guard講座</span>
+</div>
+<div>
+  ナビゲーション：<a href="/main">トップ</a>
+</div>
+  <h1>{{ .Title }}</h1>
+{{ .Content }}
+
+{{partial "adsection.html" .}}
+</div>
+<div id="postamble">
+  {{ .Date }}
+</div>

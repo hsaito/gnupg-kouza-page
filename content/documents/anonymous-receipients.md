@@ -1,145 +1,95 @@
-# -*- coding: utf-8-unix -*-
-#+TITLE:     受信者秘匿機能の利用
-#+AUTHOR:    斉藤英樹
-#+EMAIL:     hideki@hidekisaito.com
-#+DESCRIPTION: Emacs Builds prepared by Hideki Saito
-#+KEYWORDS: Emacs, software, OSS, compile, build, binaries
++++
+title = "受信者秘匿機能の利用"
+slug = "anonymous-recipients"
+categories = [
+  "機能解説",
+]
++++
 
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="style.css" />
-#+INCLUDE: analytics.org
+## 受信者秘匿とは？
 
-#+LANGUAGE:  ja
-#+OPTIONS:   H:3 num:nil toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
-#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
-#+OPTIONS: ^:{}
-#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:h
-#+EXPORT_SELECT_TAGS: export
-#+EXPORT_EXCLUDE_TAGS: noexport
-#+HTML_LINK_UP: index.html
-#+HTML_LINK_HOME: index.html
-#+XSLT:
-
-
-* 受信者秘匿機能について
-  :PROPERTIES:
-  :ID:       fbfd4544-bdf3-4227-a87f-3bc89328e885
-  :END:
-** 受信者秘匿とは？
-   :PROPERTIES:
-   :ID:       c4c846ef-c2f2-4a35-aa55-4fed828ab15c
-   :END:
 受信者秘匿機能は暗号化処理を行なう際に暗号化対象者の情報を匿名化し、暗号の宛先を読みとれないようにする処理です。
 
 例えば他人に対する暗号を復号しようとすると以下のような表示になります。
 
-#+BEGIN_EXAMPLE
-gpg: encrypted with 1024-bit RSA key, ID D69E7A73, created 2013-07-26
-      "Test Key (Not for deployment) <test@example.com>"
-gpg: decryption failed: No secret key
-#+END_EXAMPLE
-
+    gpg: encrypted with 1024-bit RSA key, ID D69E7A73, created 2013-07-26
+        "Test Key (Not for deployment) <test@example.com>"
+    gpg: decryption failed: No secret key
 
 上記はその暗号の対象者の公開鍵を持っていて、秘密鍵を持っていない場合の表示ですが、このように複合ができなくとも、そのメッセージが誰に向けて送られたのか、という情報が含まれることになります。
 
-公開鍵がない場合は上記のように名前こそは表示されませんが、それでもメッセージの頻度などからある程度推測が可能な場合もあります。[fn::これをトラフィック分析といいます]
+公開鍵がない場合は上記のように名前こそは表示されませんが、それでもメッセージの頻度などからある程度推測が可能な場合もあります。
 
 受信者秘匿を行なうと、上記の代りに以下のような表示になります。
 
-#+BEGIN_EXAMPLE
-gpg: anonymous recipient; trying secret key xxxxxxxx ...
-gpg: anonymous recipient; trying secret key xxxxxxxx ...
+    gpg: anonymous recipient; trying secret key xxxxxxxx ...
+    gpg: anonymous recipient; trying secret key xxxxxxxx ...
 
-gpg: encrypted with RSA key, ID 00000000
-gpg: decryption failed: No secret key
-#+END_EXAMPLE
+    gpg: encrypted with RSA key, ID 00000000
+    gpg: decryption failed: No secret key
 
 これは受信者に関する情報が暗号に含まれていないため、手持ちの鍵で試行するという形になります。
 
 普通の暗号が名前の書いてある鍵付きのロッカーだとすると、受信者秘匿暗号は無記名のロッカーであると言えます。誰のロッカーか分からないので、手持ちの鍵で開くか試すまで自分が開けるのに必要な鍵を持っているかすら分かりません。
 
-** なぜ秘匿するのか？
-   :PROPERTIES:
-   :ID:       da8952a9-3eb7-420c-907f-33f1fbdb2243
-   :END:
+## なぜ秘匿するのか？
+
 昨今のNSAなどのスキャンダルから、諜報機関は主にメタデータを取得していることが明らかになってきました。メタデータは通信の内容ではなく、その通信が誰に向けて宛てられているのかなどの情報を含みます。
 
 特に機密を要する情報などに関しては暗号の中身はもちろん、そのメタデータも保護するのが必要になってきます。
 
-* GnuPGでの使用法
-  :PROPERTIES:
-  :ID:       6956d790-f607-4383-be50-110b89ba403e
-  :END:
+# GnuPGでの使用法
+
 GnuPGでは、受信者指定の際に「r」オプションを使用する変わりに「R」を使用することにより実現できます。つまり、以下の違いです。
 
 通常の場合は
-#+BEGIN_EXAMPLE
-gpg -r D69E7A73 -e hoge.txt
-#+END_EXAMPLE
+
+    gpg -r D69E7A73 -e hoge.txt
 
 受信者秘匿の場合は
-#+BEGIN_EXAMPLE
-gpg -R D69E7A73 -e hoge.txt
-#+END_EXAMPLE
+
+    gpg -R D69E7A73 -e hoge.txt
 
 このオプションは組み合わせて使うことも可能です。
 
-#+BEGIN_EXAMPLE
-gpg -r D69E7A73 -R E23E7A34 -e hoge.txt
-#+END_EXAMPLE
+    gpg -r D69E7A73 -R E23E7A34 -e hoge.txt
 
 throw-keyidオプションを使用することで、これを強制することも可能です。
 
-#+BEGIN_EXAMPLE
-gpg --throw-keyid -r D69E7A73 -e hoge.txt
-#+END_EXAMPLE
+    gpg --throw-keyid -r D69E7A73 -e hoge.txt
 
 上記の場合は、通常の「r」オプションが使用されていますが、「throw-keyid」が指定されているので、秘匿されます。
 
+## セキュリティ面での注意点
 
-* セキュリティ面での注意点
-  :PROPERTIES:
-  :ID:       1a6367b3-f985-48a0-a7c4-db1a640ca0ea
-  :END:
-** 配布方法による分析
-   :PROPERTIES:
-   :ID:       cbf0e296-193d-40a0-b03f-f92e934a26d5
-   :END:
-この方法で秘匿することにより、暗号自体の宛先の秘匿はできますが、それをメールなどで送信することにより、その送信事実はメタデータとして記録されます。対策としては以下のようなものが考えられます。
-*** 同報の利用
-    :PROPERTIES:
-    :ID:       20cefa37-9821-4107-a8c1-1304b14b7111
-    :END:
+### 配布方法による分析
+
+この方法で秘匿することにより、暗号自体の宛先の秘匿はできますが、それをメールなどで送信することにより、その送信事実はメタデータとして記録されます。[^1]対策としては以下のようなものが考えられます。
+
+#### 同報の利用
+
 暗号を使用する通信はメーリングリストなど、同報を通じて行ない、暗号を受けとる可能性のある人物を加入しておきます。受信者は自分宛、もしくはそのグループの他人宛のメッセージの両方を受けとり、それぞれ、受信時に各々の環境で復号を試行します。
 通信量は増えますが、外部から誰に向けて宛てられたのかの分析が飛躍的に難しくなります。
-** ダミー受信者の使用
-   :PROPERTIES:
-   :ID:       7a7d0c77-fb72-4715-b94b-0684a20c01e6
-   :END:
+
+### ダミー受信者の使用
+
 予め、鍵を生成した上で、秘密鍵のみを破棄した鍵をいくつか作成しておき、暗号時に、それらの鍵に対しても秘匿暗号化を行います。こうすることによる狙いは暗号が宛てられている人数を秘匿することです。また、これを応用することにより、宛先が誰でもないメッセージを流すことにより、どのようなタイミングで通信が行なわれているかなどの把握を外部から行われるのを防止する効果があります。
 
-* 制限事項など
-  :PROPERTIES:
-  :ID:       ffbb580e-b432-4d14-a39a-1f18b3c23e12
-  :END:
-** PGPとの非互換
-   :PROPERTIES:
-   :ID:       345f8a35-39b0-46bf-a9bf-f86bf85d29c8
-   :END:
-GnuPGでは長らく対応されていたこの機能ですが、PGPでは対応していません。[fn::尚、Mac版においてはPGPでも動作するのを確認しています。但し復号のみ]
+## 制限事項など
 
-** MUIとの非互換
-   :PROPERTIES:
-   :ID:       7d085d15-e331-4c02-a883-6c8105bf5918
-   :END:
+### PGPとの非互換
+
+GnuPGでは長らく対応されていたこの機能ですが、PGPでは対応していません。[^2]
+
+### MUIとの非互換
+
 Enigmailなどではサポートされません。
 
+# 最後に
 
-* 最後に
-  :PROPERTIES:
-  :ID:       77e07abf-b728-4786-87fb-eb75ccf9325d
-  :END:
 このように秘匿暗号化を使用することにより、通信内容面以外に、そのメタデータも秘匿することが可能になります。通信傍受の仕組みなどの情報が明らかになるにつれ、メタデータの秘匿はこれから大きなテーマになってくるかと思います。
 
 現在は制限事項などのため、日常でメールなどに使用することは難しいかもしれませんが、工夫して利用することにより、強力な通信手法になるかと思います。
 
-#+INCLUDE: ad.org
+[^1]: これをトラフィック分析といいます
+[^2]: 尚、Mac版においてはPGPでも動作するのを確認しています。但し復号のみ

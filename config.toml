@@ -1,0 +1,4 @@
+baseurl = "http://gnupg.hclippr.com/"
+languageCode = "ja-JP"
+title = "GNU Privacy Guard講座"
+footnoteReturnLinkContents = "<sup>[本文に戻る]</sup>"

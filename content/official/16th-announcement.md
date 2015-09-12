@@ -1,29 +1,12 @@
-# -*- coding: utf-8-unix -*-
-#+TITLE: プライバシーを保護してきたこの16年
-#+AUTHOR:    斉藤英樹
-#+EMAIL:     hideki@hidekisaito.com
-#+DESCRIPTION: Emacs Builds prepared by Hideki Saito
-#+KEYWORDS: Emacs, software, OSS, compile, build, binaries
-
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="style.css" />
-#+INCLUDE: analytics.org
-
-#+LANGUAGE:  ja
-#+OPTIONS:   H:3 num:nil toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
-#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
-#+OPTIONS: ^:{}
-#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:h
-#+EXPORT_SELECT_TAGS: export
-#+EXPORT_EXCLUDE_TAGS: noexport
-#+HTML_LINK_UP: index.html
-#+HTML_LINK_HOME: index.html
-#+XSLT:
-
-（本文書はGnuPG公式のリリース[[http://blog.gnupg.org/20131220-gnupg-turned-0x10.html][16 Years of protecting privacy]]の和訳です。翻訳者：斉藤英樹）
++++
+title = "プライバシーを保護してきたこの16年"
+slug = "16th-announcement"
++++
+（本文書はGnuPG公式のリリース[16 Years of protecting privacy](http://blog.gnupg.org/20131220-gnupg-turned-0x10.html)の和訳です。翻訳者：斉藤英樹）
 
 本日はGNU Privacy Guard (GnuPG)のリリースから16年目でした。その間にこのプロジェクトはハッカーの趣味から、監視を防ぐ重要なツールの一つに成長しました。今日においてはGnuPGは侵略的な監視や市民の自由を守る前線に立っています。
 
-「市民のプライバシーを奪おうとしている政府や企業などに対してフリーソフトウェア[1]は最も信頼ができるものであることを時間が証明してきました」GnuPGの設立者であり、リード開発者であるWerner Koch氏は述べます。「資金の調達は非常に困難ではありましたが、総括的に使用できるプライバシーツールはこれまで以上に重要となってきています。」
+「市民のプライバシーを奪おうとしている政府や企業などに対してフリーソフトウェア[^1]は最も信頼ができるものであることを時間が証明してきました」GnuPGの設立者であり、リード開発者であるWerner Koch氏は述べます。「資金の調達は非常に困難ではありましたが、総括的に使用できるプライバシーツールはこれまで以上に重要となってきています。」
 
 Bruace Schneier氏、Jacob Appelbaum氏、Phil zimmerman氏（PGPの創始者）といった世界でトップクラスのセキュリティ専門家もGnuPGを使用しています。この夏、政府によるスパイ活動の告発にも告発者や記者などの間でGnuPGにより暗号化されたメールが使用されました。Red HatやDebianなど、サーバー市場でのリーダーもそのセキュリティの定評をGnuPG検証済みのソフトウェアをもとに構築しています。
 
@@ -31,8 +14,4 @@ Bruace Schneier氏、Jacob Appelbaum氏、Phil zimmerman氏（PGPの創始者）
 
 GnuPGは楕円曲線暗号などの新しいアルゴリズムの実装や、2日前に研究者によりGnuPGの更新とともに公表された音声による暗号鍵の盗聴などの新しい種類の脅威などに開発者と共に対応してきました。メンバーはGnuPGの将来に確信を持っており、新しいプライバシーに対する脅威などにコミュニティのサポートと共に立ち向かっていけたらと思います。
 
-
-[1] http://fsfe.org/freesoftware/basics/4freedoms.en.html
-
-
-
+[^1]: http://fsfe.org/freesoftware/basics/4freedoms.en.html
