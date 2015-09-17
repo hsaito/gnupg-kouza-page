@@ -44,32 +44,38 @@ GnuPGは二種類用意されており、ポータブルなスタンドアロン
 <tr>
 <td class="left">GnuPG stable</td>
 <td class="left">2.0系</td>
-<td class="left">OpenPGPとSMIMEを含むモジュラーな構成</td>
+<td class="left">OpenPGPとSMIME、Secure Shellなどのサポートを含むモジュラーな構成</td>
 </tr>
 
 
 <tr>
 <td class="left">GnuPG modern</td>
 <td class="left">2.1系</td>
-<td class="left">楕円暗号など先進的なサポートを含むバージョン</td>
+<td class="left">GnuPG stableに加え、楕円暗号など先進的なサポートを含むバージョン(将来的にはGnuPG stableの後継になります。)</td>
 </tr>
 
 
 <tr>
 <td class="left">GnuPG classic</td>
 <td class="left">1.4系</td>
-<td class="left">古いプラットフォームなどでも動作する先進的な機能を含まないバージョン</td>
+<td class="left">古いプラットフォームなどでも動作する先進的な機能を含まないバージョン。</td>
 </tr>
 </tbody>
 </table>
 
-## ダウンロード
+* GnuPG stable / GnuPG modernはより多くの機能を含みますが、構築は難しくなります。詳細は[GnuPG 2のコンパイル手順](/documents/gpg2compile)をご覧ください。
+* GnuPG stable / GnuPG modernではパスフレーズの入力にpinentryが必須になります。(GnuPG classicではオプション。)
+* GNU Privacy Guard講座ではLinux環境向けに、[GnuPG modernを構築、インストールするためのスクリプト群](https://github.com/hsaito/gnupg-buildkit)を用意しています。
+  * こちらを元にした[Dockerコンテナ](https://hub.docker.com/r/hsaito/gnupg2/)を使用し、実環境から切り離してGnuPG modernを使用することも可能です。
 
+## ダウンロード
 
 GnuPGのダウンロードは[gnupg.org](http://gnupg.org/)から可能です。
 
 * [ソースコード](http://gnupg.org/download/index.en.html)
-* Windows向けは[Gpg4win](http://gpg4win.org/)を使用してください。（尚、公式に配布されるバイナリに関してはGpg4winに一本化されているためバージョンは2.0系列となります。）
+* Windows向けはバイナリ入手にいくつかの方法があります。
+  * [Gpg4win](http://gpg4win.org/)はGnuPG本体の他、その運用に役に立つツールがバンドルされています。(Stable版)
+  * [GnuPG Download](https://gnupg.org/download/index.html)ではModern版、Classic版がダウンロードできます。(こちらはGnuPGの本体のみになります。コマンドラインで使用するユーザー向けです。)
 * Mac向けは[GPGTools](https://gpgtools.org/)を使用してください。
 
 ## 情報ページ
