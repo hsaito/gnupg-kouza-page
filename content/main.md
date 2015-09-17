@@ -3,6 +3,9 @@ title = "GNU Privacy Guard講座 トップ"
 slug = "main"
 +++
 
+## ニュース
+* 当サイトは試験的運用として、[Tor](http://torproject.org)よりのアクセスに対応しました。次の秘匿サービスURLが使用できます。http://gnupg4na2oymu5ls.onion
+
 ## GNU Privacy Guardとは？
 
 GnuPGはGNUプロジェクトのRFC4880で定義されるOpenPGP標準の完全でフリーな実装です。GnuPGを使用することによりデータや通信 を暗号化したり署名したりすることができ、多機能の鍵管理システムや、多くの種類の公開鍵ディレクトリへのアクセスを可能にするモジュールが用意されています。
@@ -99,4 +102,5 @@ GnuPGのダウンロードは[gnupg.org](http://gnupg.org/)から可能です。
 
 ## その他
 
-* このページの編集履歴は[GitHub](https://github.com/hsaito/gnupg-kouza-page)で閲覧可能です。
+* 当サイトの編集履歴は[GitHub](https://github.com/hsaito/gnupg-kouza-page)で閲覧可能です。
+* 当サイトは[Tor](http://torproject.org)よりのアクセスに対応しております。次の秘匿サービスURLが使用できます。http://gnupg4na2oymu5ls.onion
