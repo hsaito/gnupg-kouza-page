@@ -66,7 +66,9 @@ GnuPGは二種類用意されており、ポータブルなスタンドアロン
 * GnuPG stable / GnuPG modernはより多くの機能を含みますが、構築は難しくなります。詳細は[GnuPG 2のコンパイル手順](/documents/gpg2compile)をご覧ください。
 * GnuPG stable / GnuPG modernではパスフレーズの入力にpinentryが必須になります。(GnuPG classicではオプション。)
 * GNU Privacy Guard講座ではLinux環境向けに、[GnuPG modernを構築、インストールするためのスクリプト群](https://github.com/hsaito/gnupg-buildkit)を用意しています。
+  * 予備サイトとして[HidekiSaitoComレポジトリ](http://git.hidekisaito.com)でも[公開](http://git.hidekisaito.com/?p=gnupg-buildkit.git)しています。
   * こちらを元にした[Dockerコンテナ](https://hub.docker.com/r/hsaito/gnupg2/)を使用し、実環境から切り離してGnuPG modernを使用することも可能です。
+ 
 
 ## ダウンロード
 
@@ -110,6 +112,7 @@ GnuPGのダウンロードは[gnupg.org](http://gnupg.org/)から可能です。
 
 ### 更新履歴
 * 当サイトの編集履歴は[GitHub](https://github.com/hsaito/gnupg-kouza-page)で閲覧可能です。
+  * 予備サイトとして[HidekiSaitoComレポジトリ](http://git.hidekisaito.com/)でも[公開](http://git.hidekisaito.com/?p=gnupg-kouza-page.git)しています。
 
 ### Tor秘匿サービスでのアクセス
 * 当サイトは[Tor](http://torproject.org)よりのアクセスに対応しております。次の秘匿サービスURLが使用できます。http://gnupg4na2oymu5ls.onion
