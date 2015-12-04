@@ -4,6 +4,7 @@ slug = "main"
 +++
 
 ## ニュース
+* [Let's Encrypt](http://letsencrypt.org)の証明書により、暗号化接続が可能になりました。[https://gnupg.hclippr.com](https://gnupg.hclippr.com)で接続できます。HSTSを使用しており、一度暗号接続を行うと最終アクセスより一週間、自動的に平文版に接続した場合でも暗号接続に切り替わります。
 * 当サイトは試験的運用として、[Tor](http://torproject.org)よりのアクセスに対応しました。次の秘匿サービスURLが使用できます。http://gnupg4na2oymu5ls.onion
 
 ## GNU Privacy Guardとは？
