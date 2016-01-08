@@ -67,8 +67,8 @@ GnuPGは二種類用意されており、ポータブルなスタンドアロン
 * GnuPG stable / GnuPG modernはより多くの機能を含みますが、構築は難しくなります。詳細は[GnuPG 2のコンパイル手順](/documents/gpg2compile)をご覧ください。
 * GnuPG stable / GnuPG modernではパスフレーズの入力にpinentryが必須になります。(GnuPG classicではオプション。)
 * GNU Privacy Guard講座ではLinux環境向けに、[GnuPG modernを構築、インストールするためのスクリプト群](https://github.com/hsaito/gnupg-buildkit)を用意しています。
-  * 予備サイトとして[HidekiSaitoComレポジトリ](http://git.hidekisaito.com)でも[公開](http://git.hidekisaito.com/?p=gnupg-buildkit.git)しています。
-  * こちらを元にした[Dockerコンテナ](https://hub.docker.com/r/hsaito/gnupg2/)を使用し、実環境から切り離してGnuPG modernを使用することも可能です。
+	* 予備サイトとして[HidekiSaitoComレポジトリ](http://git.hidekisaito.com)でも[公開](http://git.hidekisaito.com/?p=gnupg-buildkit.git)しています。
+	* こちらを元にした[Dockerコンテナ](https://hub.docker.com/r/hsaito/gnupg2/)を使用し、実環境から切り離してGnuPG modernを使用することも可能です。
  
 
 ## ダウンロード
@@ -77,8 +77,8 @@ GnuPGのダウンロードは[gnupg.org](http://gnupg.org/)から可能です。
 
 * [ソースコード](http://gnupg.org/download/index.en.html)
 * Windows向けはバイナリ入手にいくつかの方法があります。
-  * [Gpg4win](http://gpg4win.org/)はGnuPG本体の他、その運用に役に立つツールがバンドルされています。(Stable版)
-  * [GnuPG Download](https://gnupg.org/download/index.html)ではModern版、Classic版がダウンロードできます。(こちらはGnuPGの本体のみになります。コマンドラインで使用するユーザー向けです。)
+	* [Gpg4win](http://gpg4win.org/)はGnuPG本体の他、その運用に役に立つツールがバンドルされています。(Stable版)
+	* [GnuPG Download](https://gnupg.org/download/index.html)ではModern版、Classic版がダウンロードできます。(こちらはGnuPGの本体のみになります。コマンドラインで使用するユーザー向けです。)
 * Mac向けは[GPGTools](https://gpgtools.org/)を使用してください。
 
 ## 情報ページ
@@ -113,14 +113,14 @@ GnuPGのダウンロードは[gnupg.org](http://gnupg.org/)から可能です。
 
 ### 更新履歴
 * 当サイトの編集履歴は[GitHub](https://github.com/hsaito/gnupg-kouza-page)で閲覧可能です。
-  * 予備サイトとして[HidekiSaitoComレポジトリ](http://git.hidekisaito.com/)でも[公開](http://git.hidekisaito.com/?p=gnupg-kouza-page.git)しています。
+	* 予備サイトとして[HidekiSaitoComレポジトリ](http://git.hidekisaito.com/)でも[公開](http://git.hidekisaito.com/?p=gnupg-kouza-page.git)しています。
 
 ### Tor秘匿サービスでのアクセス
 * 当サイトは[Tor](http://torproject.org)よりのアクセスに対応しております。次の秘匿サービスURLが使用できます。http://gnupg4na2oymu5ls.onion
 	* 秘匿サービスは完全に別システムで運用されているため、通常版が使用できる場合でも繋がらない場合があります。その場合は時間をおいて試してみて下さい。
 	* Torをインストールしていない環境では[tor2web](https://onion.to/)を使用してアクセスすることが可能ですが、Torでアクセスすることの利点は失われます。それでも試してみたい方は、次のうちのどれかのURLを使用して下さい。
-	  * http://gnupg4na2oymu5ls.onion.to
-	  * http://gnupg4na2oymu5ls.onion.city
-	  * http://gnupg4na2oymu5ls.onion.cab
-	  * http://gnupg4na2oymu5ls.onion.direct
+		* http://gnupg4na2oymu5ls.onion.to
+		* http://gnupg4na2oymu5ls.onion.city
+		* http://gnupg4na2oymu5ls.onion.cab
+		* http://gnupg4na2oymu5ls.onion.direct
 * Torに関しては[各種資料](https://ja.wiki.hidekisaito.com/wiki/Tor)も作成してあります。
