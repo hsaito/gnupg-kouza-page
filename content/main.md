@@ -117,9 +117,10 @@ GnuPGのダウンロードは[gnupg.org](http://gnupg.org/)から可能です。
 
 ### Tor秘匿サービスでのアクセス
 * 当サイトは[Tor](http://torproject.org)よりのアクセスに対応しております。次の秘匿サービスURLが使用できます。http://gnupg4na2oymu5ls.onion
-  * 秘匿サービスは完全に別システムで運用されているため、通常版が使用できる場合でも繋がらない場合があります。その場合は時間をおいて試してみて下さい。
-  * Torをインストールしていない環境では[tor2web](https://onion.to/)を使用してアクセスすることが可能ですが、Torでアクセスすることの利点は失われます。それでも試してみたい方は、次のうちのどれかのURLを使用して下さい。
-	* http://gnupg4na2oymu5ls.onion.to
-	* http://gnupg4na2oymu5ls.onion.city
-	* http://gnupg4na2oymu5ls.onion.cab
-	* http://gnupg4na2oymu5ls.onion.direct
+	* 秘匿サービスは完全に別システムで運用されているため、通常版が使用できる場合でも繋がらない場合があります。その場合は時間をおいて試してみて下さい。
+	* Torをインストールしていない環境では[tor2web](https://onion.to/)を使用してアクセスすることが可能ですが、Torでアクセスすることの利点は失われます。それでも試してみたい方は、次のうちのどれかのURLを使用して下さい。
+	  * http://gnupg4na2oymu5ls.onion.to
+	  * http://gnupg4na2oymu5ls.onion.city
+	  * http://gnupg4na2oymu5ls.onion.cab
+	  * http://gnupg4na2oymu5ls.onion.direct
+* Torに関しては[各種資料](https://ja.wiki.hidekisaito.com/wiki/Tor)も作成してあります。
